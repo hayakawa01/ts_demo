@@ -1,22 +1,22 @@
-const path = require("path");
+const path = require('path')
 // webpackの設定ファイル
 module.exports = {
   // モジュールをバンドルする際の
   // エントリーポイント（起点）となる変数の命名と参照ファイルの設定
   entry: {
-    bundle: "./src/index.ts",
+    bundle: './src/index.ts',
   },
   // 出力先のパス、今回は最終的にts→js似直したdistファイルのあるdistディレクトリを参照する
   output: {
-    path: path.join(__dirname, "dist"),
-    filename: "[name].js",
+    path: path.join(__dirname, 'dist'),
+    filename: '[name].js',
   },
   resolve: {
-    extensions: [".ts", ".js"],
+    extensions: ['.ts', '.js'],
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, "dist"),
+      directory: path.join(__dirname, 'dist'),
     },
     open: true,
     hot: true,
@@ -26,9 +26,9 @@ module.exports = {
   module: {
     rules: [
       {
-        loader: "ts-loader",
+        loader: 'ts-loader',
         test: /\.ts$/, //   \. → ドットエスケープ 、$末尾指定
       },
     ],
   },
-};
+}
