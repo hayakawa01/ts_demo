@@ -1,6 +1,6 @@
 README.md
 
-## 環境構築
+## 1. 環境構築
 
 ```
 npm install --save-dev typescript ts-loader webpack webpack-cli webpack-dev-server
@@ -18,3 +18,35 @@ npm install --save-dev typescript ts-loader webpack webpack-cli webpack-dev-serv
     - コマンドライン上で webpack をそうさできる
   - webpack-dev-server
     - webpack のビルドや web サーバー（ローカル環境）の起動
+
+## 2. 型定義（primitive, any, unknown)
+
+## 3. 型定義を使用した関数の書き方(引数と返り値に型定義)
+
+### 関数で使用する特別な型
+
+#### void
+
+`return` を持たない関数の戻り値
+
+```
+const logMessage = (message:string):void =>{
+  console.log(message)
+}
+```
+
+とか
+
+### 関数で使用する特別な型
+
+#### never
+
+決して戻ることのない戻り値
+
+```
+const alwaysThrowError = (message:string):never =>{
+  throw new Error(message)
+}
+```
+
+とか、whileなどループで使用する可能性がある
